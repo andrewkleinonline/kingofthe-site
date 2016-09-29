@@ -5,4 +5,10 @@ Rails.application.routes.draw do
 
   resources :prompts
 
+
+
+  match 'auth/:provider/callback', to: 'prompts#index', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  #match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+
 end

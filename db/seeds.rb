@@ -8,11 +8,11 @@
 
 #users
 
-alice = User.create(name: "Alice")
-jake = User.create(name: "Jake")
-gentian = User.create(name: "Gentian")
-cliff = User.create(name: "Cliff")
-daniella = User.create(name: "Daniella")
+alice = User.create(first_name: "Alice", last_name: "Kallaugher")
+jake = User.create(first_name: "Jake", last_name: "Dowd")
+gentian = User.create(first_name: "Gentian", last_name: "Bardhoshi")
+cliff = User.create(first_name: "Cliff", last_name: "Regis")
+daniella = User.create(first_name: "Daniella", last_name: "Penn")
 
 a_decree = alice.decrees.create(content: "What is your favorite superpower?")
 
