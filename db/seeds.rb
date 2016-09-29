@@ -8,11 +8,22 @@
 
 #users
 
-andrew = User.create(name: "Andrew")
+alice = User.create(name: "Alice")
 jake = User.create(name: "Jake")
-a_decree = andrew.decrees.create(content: "Fav superpower?")
+gentian = User.create(name: "Gentian")
+cliff = User.create(name: "Cliff")
+daniella = User.create(name: "Daniella")
+
+a_decree = alice.decrees.create(content: "What is your favorite superpower?")
 
 j_response = jake.responses.create(content: "Invisibility")
-a_decree.responses << j_response
+c_response = cliff.responses.create(content: "Flying")
+a_decree.responses << [j_response, c_response]
 
-andrew.votes.create(response: j_response)
+g_decree = gentian.decrees.create(content: "What is your favorite color?")
+a_response = alice.responses.create(content: "Banana blue")
+d_response = daniella.responses.create(content: "Salamander silver")
+g_decree.responses << [a_response, d_response]
+
+
+alice.votes.create(response: j_response)
