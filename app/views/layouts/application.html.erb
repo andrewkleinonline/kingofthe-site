@@ -10,6 +10,13 @@
 
   <body>
     <h1> KING OF THE SITE </h1>
+    <% if logged_in? %>
+      Signed in as <%= current_user.first_name_and_last_initial %>
+      <%=link_to "Sign Out", "/sessions/:id", method: :delete %>
+    <% else %>
+      <%= link_to "Sign In", "/auth/facebook", id: "sign_in" %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

@@ -8,4 +8,14 @@ class User < ApplicationRecord
   def first_name_and_last_initial
     "#{first_name} #{last_name[0]}."
   end
+
+  def self.find_or_create_from_omniauth(auth)
+    user = self.find_or_create_by(facebook_user_id: auth[:uid])
+    user.first_name = auth[:info][:first_name]
+    user.last_name = auth[:info][:last_name]
+    user.email = auth[:info][:email]
+    #user.profile_picture_url = auth[:info][:image]
+    user.save
+  end
+
 end
