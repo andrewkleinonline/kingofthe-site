@@ -4,9 +4,11 @@ class VotesController < ApplicationController
     vote = Vote.create(vote_params)
     vote.user = current_user
     vote.save
-    # Vote.create(response_id: params[:response_id], user_id: current_user.id)
     redirect_to root_path
   end
+
+  # def destroy
+  # end
 
 
   private
