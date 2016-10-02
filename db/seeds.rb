@@ -14,7 +14,7 @@ gentian = User.create(first_name: "Gentian", last_name: "Bardhoshi")
 cliff = User.create(first_name: "Cliff", last_name: "Regis")
 daniella = User.create(first_name: "Daniella", last_name: "Penn")
 
-a_decree = alice.decrees.create(content: "What is your favorite superpower?")
+a_decree = alice.decrees.create(content: "What is your favorite superpower?", current: true)
 
 j_response = jake.responses.create(content: "Invisibility")
 c_response = cliff.responses.create(content: "Flying")

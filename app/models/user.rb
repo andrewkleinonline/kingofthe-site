@@ -18,4 +18,8 @@ class User < ApplicationRecord
     user.save
   end
 
+  def vote_button_text(response)
+    response.votes.map { |vote| vote.user_id }.include?(self.id) ? "Unvote" : "Vote"
+  end
+
 end

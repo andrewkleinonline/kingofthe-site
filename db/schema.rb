@@ -17,9 +17,10 @@ ActiveRecord::Schema.define(version: 20160929151816) do
 
   create_table "prompts", force: :cascade do |t|
     t.integer  "king_id"
+    t.boolean  "current",    default: false
     t.string   "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["king_id"], name: "index_prompts_on_king_id", using: :btree
   end
 
