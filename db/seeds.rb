@@ -8,22 +8,22 @@
 
 #users
 
-alice = User.create(first_name: "Alice", last_name: "Kallaugher", king: true)
-jake = User.create(first_name: "Jake", last_name: "Dowd")
-gentian = User.create(first_name: "Gentian", last_name: "Bardhoshi")
-cliff = User.create(first_name: "Cliff", last_name: "Regis")
-daniella = User.create(first_name: "Daniella", last_name: "Penn")
+test_users = FactoryGirl.create_list(:user, 100)
 
-a_decree = alice.decrees.create(content: "What is your favorite superpower?", current: true)
+20.times do
+  new_prompt = FactoryGirl.create(:prompt, king: test_users.sample) #create a prompt
 
-j_response = jake.responses.create(content: "Invisibility")
-c_response = cliff.responses.create(content: "Flying")
-a_decree.responses << [j_response, c_response]
+  test_users.sample(20).each do |user| #select 20 distinct random users to create responses
+    FactoryGirl.create(:response, user: user, prompt: new_prompt) #create a response
+  end
 
-g_decree = gentian.decrees.create(content: "What is your favorite color?")
-a_response = alice.responses.create(content: "Banana blue")
-d_response = daniella.responses.create(content: "Salamander silver")
-g_decree.responses << [a_response, d_response]
+  new_prompt.responses.each do |response| #for each response...
+    test_users.sample(rand(40)).each do |voter| #select up to 40 distinct random users to vote
+      Vote.create(response: response, user: voter) #create a vote
+    end
+  end
 
+end
 
-alice.votes.create(response: j_response)
+Prompt.last.update(current: true) #set the last prompt as current
+Prompt.last.king.update(king: true) #set the king of that prompt as the current king
