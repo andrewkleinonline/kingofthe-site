@@ -1,1 +1,9 @@
-<h2>Hello, King </h2>
+<h2>Hello, King <%= @king.first_name_and_last_initial %></h2>
+
+<!-- remember to move this form to a partial to make editing/updating DRY: -->
+<%= form_for @prompt do |f| %>
+  <%= f.text_area :content %>
+
+  <%= f.submit %>
+
+<% end %>

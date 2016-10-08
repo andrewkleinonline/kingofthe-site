@@ -14,12 +14,28 @@ class PromptsController < ApplicationController
   end
 
   def show_current
-    @prompt = Prompt.find_by(current: true)
+    @prompt = Prompt.current
     render :show
   end
 
   def new
+    @king = User.current_king
     @prompt = Prompt.new
   end
+
+  def create
+    new_prompt = Prompt.new(prompt_params)
+    new_prompt.king = User.current_king
+    new_prompt.save
+    new_prompt.make_current
+
+    redirect_to root_path
+  end
+
+  private
+
+    def prompt_params
+      params.require(:prompt).permit(:content)
+    end
 
 end
