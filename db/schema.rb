@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20160929151816) do
 
   create_table "prompts", force: :cascade do |t|
     t.integer  "king_id"
-    t.boolean  "current",    default: false
     t.string   "content"
+    t.boolean  "current",    default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["king_id"], name: "index_prompts_on_king_id", using: :btree
@@ -39,8 +39,9 @@ ActiveRecord::Schema.define(version: 20160929151816) do
     t.string   "last_name"
     t.string   "email"
     t.string   "facebook_user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.boolean  "king",             default: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "votes", force: :cascade do |t|

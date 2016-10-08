@@ -8,7 +8,7 @@
 
 #users
 
-alice = User.create(first_name: "Alice", last_name: "Kallaugher")
+alice = User.create(first_name: "Alice", last_name: "Kallaugher", king: true)
 jake = User.create(first_name: "Jake", last_name: "Dowd")
 gentian = User.create(first_name: "Gentian", last_name: "Bardhoshi")
 cliff = User.create(first_name: "Cliff", last_name: "Regis")

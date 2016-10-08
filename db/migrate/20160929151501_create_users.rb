@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :email
       t.string :facebook_user_id
 
+      t.boolean :king, default: false
+
       t.timestamps
     end
   end
