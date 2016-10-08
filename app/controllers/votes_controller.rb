@@ -11,6 +11,9 @@ class VotesController < ApplicationController
       vote = Vote.create(vote_params)
       vote.user = current_user
       vote.save
+
+      #check if vote total has been reached (via method on prompt?)
+
       redirect_to root_path
     end
   end
