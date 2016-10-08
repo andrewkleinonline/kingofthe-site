@@ -3,7 +3,7 @@
 
   <h2><%= prompt.content %></h2>
 
-  <%= render partial: 'responses/form', locals: {prompt: prompt} if logged_in? && prompt.current %>
+  <%= render partial: 'responses/form', locals: {prompt: prompt} if logged_in? && prompt.current && !current_user.already_responded?(prompt.id) %>
 
   <%= render prompt.responses %>
 </div>

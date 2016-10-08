@@ -27,11 +27,14 @@ class User < ApplicationRecord
     self.liked_response_ids.include?(response_id)
   end
 
+  def already_responded?(prompt_id)
+    self.prompt_ids.include?(prompt_id)
+  end
+
   def crown
     User.current_king.update(king: false)
     self.update(king: true)
   end
-
 
   def vote_button_text(response)
     response.voter_ids.include?(self.id) ? "Unvote" : "Vote"
