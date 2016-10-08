@@ -1,24 +1,20 @@
-# README
+# King of the Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a rails app project I am doing for fun. I will host the app on
+http://www.kingofthe.site
 
-Things you may want to cover:
+The goal is to create a site where users provide their best response to a
+creative prompt, vote for their favorite responses, and the user who gets the
+most votes becomes "king" and gets to set the next prompt. As a stretch goal, I
+would like institutions, organizations, and communities to be able to form their
+own groups so they can use in-jokes and not worry about moderation.
 
-* Ruby version
+To make this app, I used:
 
-* System dependencies
+* Faker & Factory Girl
+* Omniauth-facebook
+* Figaro
+* Rails
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+When I am satisfied with the core functionality, I will work on improving the
+user experience with React.
