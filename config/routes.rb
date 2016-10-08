@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'past_decrees', to: 'prompts#past_decrees'
   resources :sessions
   resources :votes
+  resources :responses
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

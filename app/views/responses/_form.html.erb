@@ -1,0 +1,7 @@
+<h3>New responses form!</h3>
+
+<%= form_for Response.new do |f| %>
+  <%= f.hidden_field :prompt_id, value: prompt.id %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>
