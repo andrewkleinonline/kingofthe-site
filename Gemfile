@@ -45,6 +45,10 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   gem 'pry-rails'
+
+  gem 'rspec-rails'
+
+  gem 'rspec'
 end
 
 group :development do
