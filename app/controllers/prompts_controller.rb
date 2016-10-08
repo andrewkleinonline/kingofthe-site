@@ -4,6 +4,11 @@ class PromptsController < ApplicationController
     @prompts = Prompt.all
   end
 
+  def past_decrees
+    @prompts = Prompt.where(current: false)
+    render :index
+  end
+
   def show
     @prompt = Prompt.find(params[:id])
   end

@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   root 'prompts#show_current'
 
   resources :prompts
+  get 'past_decrees', to: 'prompts#past_decrees'
   resources :sessions
-  resources :votes 
+  resources :votes
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
