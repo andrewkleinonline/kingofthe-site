@@ -1,7 +1,7 @@
 # King of the Site
 
-This is a rails app project I am doing for fun. I will host the app on
-http://www.kingofthe.site
+This is a rails app project I am doing for fun and to learn. I will host the
+project on http://www.kingofthe.site
 
 The goal is to create a site where users provide their best response to a
 creative prompt, vote for their favorite responses, and the user who gets the
