@@ -19,6 +19,10 @@ class User < ApplicationRecord
     user.save
   end
 
+  def self.current_king
+    self.find_by(king: true)
+  end
+
   def vote_button_text(response)
     response.voter_ids.include?(self.id) ? "Unvote" : "Vote"
   end
