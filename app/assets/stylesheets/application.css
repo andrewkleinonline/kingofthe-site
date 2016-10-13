@@ -14,6 +14,18 @@
  *= require_self
  */
 
+#site-title {
+  color: purple;
+}
+
+.vote-column {
+  text-align: center;
+}
+
+ /*.jumbotron.container {
+   color: purple;
+ }*/
+
  div.panel-default {
    background-color: #bababa;
  }
@@ -21,3 +33,27 @@
  html body {
    background-color: #eeeeee;
  }
+
+ .response {
+   font-size: 22px;
+ }
+
+ .new_response {
+   display: inline-block;
+ }
+
+ .vote-count {
+   text-align: center;
+ }
+
+ h2.prompt-content {
+   font-size: 30px;
+ }
+
+/*.new_vote {
+  display: inline-block;
+}*/
+ /*#response_content {
+   align-self: center;
+   margin-left: 20px;
+ }*/

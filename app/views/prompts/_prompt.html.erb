@@ -1,25 +1,18 @@
-<div >
-  <h3>King <%= prompt.king.first_name_and_last_initial %> has issued the following decree:</h3>
+<div>
+  <h3><strong>King <%= prompt.king.first_name_and_last_initial %></strong> has issued the following decree:</h3>
 
   <div class="panel-default">
     <div class="panel-heading">
-      <h2 class="panel-title"><%= prompt.content %></h2>
+      <h2 class="panel-title prompt-content">
+        <strong>"<%= prompt.content %>"</strong>
+      </h2>
     </div>
-    <br />
+    <div class="panel-body">
       <%= render partial: 'responses/form', locals: {prompt: prompt} if logged_in? && prompt.current && !current_user.already_responded?(prompt.id) %>
 
       <%= render prompt.responses %>
+    </div>
   </div>
 </div>
-
-<!-- <div class="jumbotron">
-  <h1>Hello, world!</h1>
-  <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Panel title</h3>
-  </div>
-  <div class="panel-body">
-    Panel content
-  </div>
-</div>
-</div> -->
+<br />
+<br />

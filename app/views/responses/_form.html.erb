@@ -1,7 +1,23 @@
-<h3>New responses form!</h3>
-
+<!-- <h3>New responses form!</h3> -->
+<!--
 <%= form_for Response.new do |f| %>
   <%= f.hidden_field :prompt_id, value: prompt.id %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
-<% end %>
+  <%= f.text_field :content, size: 50 %>
+  <%= f.submit "Add your own response!", class: "btn btn-primary" %>
+<% end %> -->
+
+<hr>
+<div class="response row">
+  <div class="col-md-1 col-xs-1 vote-count">
+  </div>
+  <div class="col-md-9 col-xs-9">
+    <strong><%= current_user.first_name_and_last_initial %> says:</strong>
+    <%= form_for Response.new do |f| %>
+      <%= f.hidden_field :prompt_id, value: prompt.id %>
+      <%= f.text_field :content, size: 40, class: "form-control" %>
+  </div>
+  <div class="col-md-1 col-xs-1 vote-column">
+    <%= f.submit "Submit!", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+</div>

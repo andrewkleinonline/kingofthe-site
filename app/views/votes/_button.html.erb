@@ -1,5 +1,5 @@
 <%= form_for Vote.new do |f| %>
   <%= f.hidden_field :response_id, value: response.id %>
 
-  <%= f.submit current_user.vote_button_text(response) %>
+  <%= f.submit current_user.vote_button_text(response), class: 'vote_button btn btn-primary' %>
 <% end %>
