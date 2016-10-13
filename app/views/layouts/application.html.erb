@@ -11,23 +11,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-gv0oNvwnqzF6ULI9TVsSmnULNb3zasNysvWwfT/s4l8k5I+g6oFz9dye0wg3rQ2Q" crossorigin="anonymous">
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-pVJelSCJ58Og1XDc2E95RVYHZDPb9AVyXsI8NoVpB2xmtxoZKJePbMfE4mlXw7BJ" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <div class="container">
-      <h1> KING OF THE SITE </h1>
-      <% if logged_in? %>
-        Signed in as <%= current_user.first_name_and_last_initial %>
-        <%=link_to "Sign Out", "signout" %>
-      <% else %>
-        <%= link_to "Sign In", "/auth/facebook", id: "sign_in" %>
-      <% end %>
+    <div class="jumbotron">
+      <div class="container">
+        <h1> KING OF THE SITE </h1>
+        <% if logged_in? %>
+          Signed in as <%= current_user.first_name_and_last_initial %>
+          <%=link_to "Sign Out", "signout" %>
+        <% else %>
+          <%= link_to "Sign In", "/auth/facebook", id: "sign_in" %>
+        <% end %>
 
-      <%= yield %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

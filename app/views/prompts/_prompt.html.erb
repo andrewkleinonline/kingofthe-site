@@ -1,9 +1,25 @@
-<div>
+<div class="jumbotron">
   <h3>King <%= prompt.king.first_name_and_last_initial %> has issued the following decree:</h3>
 
-  <h2><%= prompt.content %></h2>
+  <div class="panel-default">
+    <div class="panel-heading">
+      <h2 class="panel-title"><%= prompt.content %></h2>
+    </div>
+    <br />
+      <%= render partial: 'responses/form', locals: {prompt: prompt} if logged_in? && prompt.current && !current_user.already_responded?(prompt.id) %>
 
-  <%= render partial: 'responses/form', locals: {prompt: prompt} if logged_in? && prompt.current && !current_user.already_responded?(prompt.id) %>
-
-  <%= render prompt.responses %>
+      <%= render prompt.responses %>
+  </div>
 </div>
+
+<!-- <div class="jumbotron">
+  <h1>Hello, world!</h1>
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>
+</div> -->
