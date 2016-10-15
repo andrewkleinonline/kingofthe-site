@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :sessions
   resources :votes
   resources :responses
+  resources :users, only: [:show]
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
