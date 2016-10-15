@@ -6,6 +6,11 @@
       <h2 class="panel-title prompt-content">
         <strong>"<%= prompt.content %>"</strong>
       </h2>
+      <% if prompt.current %>
+        <h3>
+          <%= "#{prompt.remaining_votes} votes remaining" %>
+        </h3>
+      <% end %>
     </div>
     <div class="panel-body">
       <%= render partial: 'responses/form', locals: {prompt: prompt} if logged_in? && prompt.current && !current_user.already_responded?(prompt.id) %>
