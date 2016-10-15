@@ -25,5 +25,5 @@ test_users = FactoryGirl.create_list(:user, 100)
 
 end
 
-Prompt.last.update(current: true, remaining_votes: 2) #set the last prompt as current
+Prompt.last.update(current: true) #set the last prompt as current
 Prompt.last.king.update(king: true) #set the king of that prompt as the current king

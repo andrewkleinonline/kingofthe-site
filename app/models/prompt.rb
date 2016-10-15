@@ -14,7 +14,12 @@ class Prompt < ApplicationRecord
     self.update(current: true)
   end
 
-  def vote_total_reached?
-    self.votes.count >= 3 #hard-coded 3 as 'skateboard' solution
+  def remaining_votes
+    1000 - self.votes.count #hard-coded as 1000 temporarily
   end
+
+  def vote_total_reached?
+    self.remaining_votes <= 0
+  end
+  
 end
