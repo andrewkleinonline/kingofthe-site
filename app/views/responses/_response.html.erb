@@ -6,6 +6,13 @@
     <strong><%= link_to response.user.first_name_and_last_initial, user_path(response.user) %> says:</strong> <%= response.content %>
   </div>
   <div class="col-md-1 col-xs-1 vote-column">
-    <%= render partial: 'votes/button', locals: {response: response} if logged_in? && response.prompt.current %>
+    <% if logged_in? && response.prompt.current %>
+      <% if !response.prompt.vote_total_reached? %>
+        <%= render partial: 'votes/button', locals: {response: response} %>
+      <% else %>
+        <%= button_tag current_user.vote_button_text(response), class: 'vote_button btn btn-primary', disabled: true %>
+      <% end %>
+    <% end %>
+
   </div>
 </div>
