@@ -13,7 +13,7 @@
       <% end %>
     </div>
     <div class="panel-body">
-      <% if logged_in? && prompt.current && !current_user.already_responded?(prompt.id) && !prompt.vote_total_reached? %>
+      <% if logged_in? && prompt.current && !current_user.already_responded?(prompt.id) && !prompt.vote_total_reached? && !current_user.king%>
         <%= render partial: 'responses/form', locals: {prompt: prompt} %>
         <hr />
       <% end %>
