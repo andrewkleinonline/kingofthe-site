@@ -1,10 +1,22 @@
-<h1><%= @user.first_name_and_last_initial %></h1>
+<h1><%= @user.first_name_and_last_initial %>'s Past Responses:</h1>
 
-<ul>
-  <% @user.responses.each do |response| %>
-    <li>
-      <%= response.content %>
-    </li>
+<% @user.responses.each do |response| %>
 
-  <% end %>
-</ul>
+<div>
+  <h3><strong>King <%= response.prompt.king.first_name_and_last_initial %></strong> has issued the following decree:</h3>
+
+  <div class="panel-default">
+    <div class="panel-heading">
+      <h2 class="panel-title prompt-content">
+        <strong>"<%= response.prompt.content %>"</strong>
+      </h2>
+    </div>
+    <div class="panel-body">
+      <%= render response %>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+
+<% end %>

@@ -13,9 +13,12 @@
       <% end %>
     </div>
     <div class="panel-body">
-      <%= render partial: 'responses/form', locals: {prompt: prompt} if logged_in? && prompt.current && !current_user.already_responded?(prompt.id) %>
+      <% if logged_in? && prompt.current && !current_user.already_responded?(prompt.id) %>
+        <%= render partial: 'responses/form', locals: {prompt: prompt} %>
+        <hr />
+      <% end %>
 
-      <%= render prompt.responses %>
+      <%= render partial: prompt.responses, spacer_template: "responses/spacer" %>
     </div>
   </div>
 </div>
