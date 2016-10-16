@@ -34,6 +34,7 @@ class User < ApplicationRecord
   def crown
     User.current_king.update(king: false)
     self.update(king: true)
+    #mail link to form
   end
 
   def vote_button_text(response)

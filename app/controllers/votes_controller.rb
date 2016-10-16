@@ -13,6 +13,14 @@ class VotesController < ApplicationController
       vote.save
 
       #check if vote total has been reached (via method on prompt?)
+      current_prompt = Prompt.current
+      if current_prompt.vote_total_reached?
+        top_vote_getter = current_prompt.votes.group(:response).count.max_by { |response, vote_count| vote_count}[0].user
+        #above line likely breaks ties according to whichever user is first in the array returned by ActiveRecord
+        #in a more refined product the tiebreaker would be more well thought out
+
+        top_vote_getter.crown
+      end
 
       redirect_to root_path
     end

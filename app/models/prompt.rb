@@ -15,11 +15,11 @@ class Prompt < ApplicationRecord
   end
 
   def remaining_votes
-    1000 - self.votes.count #hard-coded as 1000 temporarily
+    392 - self.votes.count #hard-coded temporarily
   end
 
   def vote_total_reached?
     self.remaining_votes <= 0
   end
-  
+
 end
