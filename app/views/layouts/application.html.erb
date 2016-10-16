@@ -67,6 +67,18 @@
     <div class="jumbotron">
       <div class="container">
         <h1 id="site-title">King of the Site</h1>
+
+        <% if logged_in? && current_user.king %>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h1> You are the king! </h1>
+              <% if Prompt.current.king != current_user %>
+                <h3> <%= link_to "Create the new decree!", new_prompt_path %> </h3>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
         <%= yield %>
       </div>
     </div>
