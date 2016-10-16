@@ -1,1 +1,10 @@
 <h1><%= @user.first_name_and_last_initial %></h1>
+
+<ul>
+  <% @user.responses.each do |response| %>
+    <li>
+      <%= response.content %>
+    </li>
+
+  <% end %>
+</ul>

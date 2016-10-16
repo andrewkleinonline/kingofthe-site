@@ -11,7 +11,7 @@
   <div class="col-md-1 col-xs-1 vote-count">
   </div>
   <div class="col-md-9 col-xs-9">
-    <strong><%= current_user.first_name_and_last_initial %> says:</strong>
+    <strong><%= link_to current_user.first_name_and_last_initial, user_path(current_user) %> says:</strong>
     <%= form_for Response.new do |f| %>
       <%= f.hidden_field :prompt_id, value: prompt.id %>
       <%= f.text_field :content, size: 40, class: "form-control" %>

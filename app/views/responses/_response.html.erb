@@ -4,7 +4,7 @@
     <%= response.votes.count %>
   </div>
   <div class="col-md-9 col-xs-9">
-    <strong><%= response.user.first_name_and_last_initial %> says:</strong> <%= response.content %>
+    <strong><%= link_to response.user.first_name_and_last_initial, user_path(response.user) %> says:</strong> <%= response.content %>
   </div>
   <div class="col-md-1 col-xs-1 vote-column">
     <%= render partial: 'votes/button', locals: {response: response} if logged_in? && response.prompt.current %>
