@@ -19,7 +19,7 @@ class PromptsController < ApplicationController
   end
 
   def new
-    if current_user.king
+    if current_user.king && Prompt.current.king != current_user
       @king = current_user
       @prompt = Prompt.new
     else
