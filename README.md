@@ -1,8 +1,8 @@
 # King of the Site
 
-This is a rails app project I am doing for fun and to learn. I am hosting the
-project on http://www.kingofthe.site, but it is not fully functioning at this
-time.
+This is a rails app project I started as a student of The Flatiron School. I am
+hosting the project on http://www.kingofthe.site, but it is not fully
+functioning at this time.
 
 The goal is to create a site where users provide their best response to a
 creative prompt, vote for their favorite responses, and the user who gets the
@@ -17,5 +17,7 @@ To make this app, I used:
 * Figaro
 * Rails
 
+The app will also make use of Action Mailer.
+
 When I am satisfied with the core functionality, I will work on improving the
-user experience with React.
+user experience with JavaScript.
